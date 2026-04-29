@@ -1,0 +1,59 @@
+<%- include("partials/header") %>
+<main>
+  <section class="page-hero">
+    <div class="container page-intro">
+      <p class="eyebrow">Services</p>
+      <h1>Comprehensive construction material testing services.</h1>
+      <p>Qualitex supports construction, infrastructure, and industrial project teams with laboratory testing, field sampling, NDT support, and standards-based reporting.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container service-detail-grid">
+      <% (locals.serviceCategories || []).forEach((service) => { %>
+        <article class="service-detail-card">
+          <div>
+            <span></span>
+            <h2><%= service.title %></h2>
+            <p><%= service.summary %></p>
+          </div>
+          <ul class="check-list">
+            <% service.tests.forEach((test) => { %>
+              <li><%= test %></li>
+            <% }) %>
+          </ul>
+        </article>
+      <% }) %>
+    </div>
+  </section>
+
+  <section class="section equipment-section">
+    <div class="container section-heading wide">
+      <p class="eyebrow">Representative methods</p>
+      <h2>Accredited parameters and commonly requested tests.</h2>
+    </div>
+    <div class="container">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Representative Tests</th>
+              <th>Standards</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% (locals.accreditedParameters || []).forEach((row) => { %>
+              <tr>
+                <td><%= row.category %></td>
+                <td><%= row.tests %></td>
+                <td><%= row.standard %></td>
+              </tr>
+            <% }) %>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</main>
+<%- include("partials/footer") %>
