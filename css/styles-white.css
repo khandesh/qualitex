@@ -1222,12 +1222,16 @@ body::before {
 }
 
 .hero-media {
-  inset: 72px 0 0 auto;
-  left: 50%;
+  inset: auto;
+  position: absolute;
+  top: 120px;
+  bottom: 60px;
+  right: 40px;
+  left: calc(50% + 20px);
   overflow: hidden;
   z-index: 0;
-  border-radius: 30px 0 0 30px;
-  box-shadow: -20px 0 60px rgba(0,0,0,0.06);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.08);
 }
 
 .hero-media::before, .hero-media::after {
@@ -1241,6 +1245,8 @@ body::before {
 .hero-content {
   color: #1d1d1f;
   z-index: 5;
+  width: 50%;
+  padding-right: 40px;
 }
 
 .hero h1 {
@@ -1508,7 +1514,13 @@ code {
   .hero-media {
     inset: 0;
     left: 0;
+    top: 0;
+    bottom: 0;
     border-radius: 0;
+    box-shadow: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
   }
 
   .hero-media::before, .hero-media::after {
@@ -1520,6 +1532,11 @@ code {
   .hero-media::after {
     inset: 0;
     background: linear-gradient(180deg, rgba(245, 245, 247, 0.3) 0%, rgba(245, 245, 247, 0.95) 58%, #f5f5f7 100%);
+  }
+
+  .hero-content {
+    width: 100%;
+    padding-right: 0;
   }
 
   .hero,
