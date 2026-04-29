@@ -2,17 +2,14 @@
   "name": "qualitex",
   "version": "1.0.0",
   "description": "Qualitex multi-page website for Sambhajinagar branch",
-  "main": "server.js",
+  "main": "index.html",
   "scripts": {
-    "build": "node build.js",
-    "start": "npx serve public"
+    "build": "echo 'No build required for static site'",
+    "start": "npx serve ."
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
-  "dependencies": {
-    "ejs": "^5.0.2",
-    "express": "^5.2.1"
-  }
+  "dependencies": {}
 }
