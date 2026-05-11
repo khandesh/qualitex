@@ -35,6 +35,30 @@ function moveSlide(id, direction) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  const whatsappForm = document.getElementById("whatsappForm");
+
+  if (whatsappForm) {
+    whatsappForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(whatsappForm);
+      const message = [
+        "New testing requirement from Qualitex website",
+        "",
+        `Name: ${formData.get("name") || ""}`,
+        `Contact: ${formData.get("contact") || ""}`,
+        `Email: ${formData.get("email") || ""}`,
+        "",
+        "Message:",
+        formData.get("message") || "",
+      ].join("\n");
+      const whatsappNumber = whatsappForm.dataset.whatsappNumber || "918956699841";
+      const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+      window.open(whatsappUrl, "_blank", "noopener");
+    });
+  }
+
   document.querySelectorAll(".slideshow").forEach((container) => {
     const slides = Array.from(container.querySelectorAll(".slide"));
     const delay = Number(container.dataset.autoplay) || 4500;
