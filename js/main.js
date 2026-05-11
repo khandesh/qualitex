@@ -7,6 +7,15 @@ if (menuBtn && menu) {
   });
 }
 
+// Navbar scroll effect
+const navbar = document.querySelector(".navbar");
+if (navbar) {
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("scrolled", window.scrollY > 20);
+  }, { passive: true });
+}
+
+// Slideshow logic
 const slideshows = new Map();
 
 function showSlide(id, nextIndex) {
@@ -43,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const formData = new FormData(whatsappForm);
       const message = [
-        "New testing requirement from Qualitex website",
+        "New testing enquiry from Qualitex website",
         "",
         `Name: ${formData.get("name") || ""}`,
         `Contact: ${formData.get("contact") || ""}`,
