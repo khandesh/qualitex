@@ -140,6 +140,14 @@ img {
   box-shadow: var(--glow);
 }
 
+.brand-logo {
+  display: block;
+  height: 42px;
+  max-width: 158px;
+  object-fit: contain;
+  width: auto;
+}
+
 .menu {
   align-items: center;
   display: flex;
@@ -229,7 +237,7 @@ img {
 .hero h1 {
   font-size: clamp(3rem, 7vw, 6.5rem);
   font-weight: 900;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
   line-height: 1;
   max-width: 900px;
   color: #fff;
@@ -611,6 +619,16 @@ h3 {
   grid-template-columns: 0.9fr 1.1fr;
   position: relative;
   z-index: 2;
+}
+
+.feature-layout.text-only {
+  grid-template-columns: minmax(0, 760px);
+  justify-content: center;
+  text-align: center;
+}
+
+.feature-layout.text-only .actions {
+  justify-content: center;
 }
 
 .feature-layout p {
@@ -1072,10 +1090,15 @@ textarea {
   }
 
   .brand span:last-child {
-    max-width: 200px;
+    max-width: 155px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  .brand-logo {
+    height: 38px;
+    max-width: 156px;
   }
 
   .hero,
@@ -1093,6 +1116,29 @@ textarea {
 
   h1 {
     font-size: 2.5rem;
+  }
+
+  .hero h1 {
+    font-size: 3.1rem;
+    line-height: 1.05;
+    max-width: 100%;
+    overflow-wrap: normal;
+    text-wrap: balance;
+  }
+
+  .hero .eyebrow {
+    align-items: flex-start;
+    font-size: 0.7rem;
+    gap: 8px;
+    letter-spacing: 0.08em;
+    line-height: 1.45;
+    max-width: 100%;
+  }
+
+  .hero .eyebrow::before {
+    flex: 0 0 18px;
+    margin-top: 0.65em;
+    width: 18px;
   }
 
   h2 {
