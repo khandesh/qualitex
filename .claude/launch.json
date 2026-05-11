@@ -2,10 +2,11 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "qualitex-main",
+      "name": "qualitex",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "3002", "."],
-      "port": 3002
+      "runtimeArgs": ["serve", "."],
+      "port": 3002,
+      "autoPort": true
     }
   ]
 }
