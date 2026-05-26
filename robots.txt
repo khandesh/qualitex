@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /*2.html
+
+Sitemap: https://qualitexsambhajinagar.in/sitemap.xml
