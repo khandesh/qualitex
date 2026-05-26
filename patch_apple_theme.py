@@ -1,16 +1,10 @@
 import os
 
-filepath = "css/styles-white.css"
-with open(filepath, "r", encoding="utf-8") as f:
-    content = f.read()
+styles_path = "css/styles.css"
+white_styles_path = "css/styles-white.css"
 
-# Find the start of the white theme overrides
-split_marker = "/* Premium white theme for index2.html. Original css/styles.css remains unchanged. */"
-if split_marker in content:
-    base_css = content.split(split_marker)[0]
-else:
-    print("Marker not found, please check")
-    exit(1)
+with open(styles_path, "r", encoding="utf-8") as f:
+    base_css = f.read()
 
 apple_theme_css = """/* Premium Apple-like white theme for index2.html. Original css/styles.css remains unchanged. */
 :root {
@@ -414,8 +408,7 @@ code {
 }
 """
 
-with open(filepath, "w", encoding="utf-8") as f:
+with open(white_styles_path, "w", encoding="utf-8") as f:
     f.write(base_css + apple_theme_css)
 
 print("Styles updated successfully.")
-
